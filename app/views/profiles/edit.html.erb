@@ -1,0 +1,15 @@
+<div class="back-btn">
+    <%= button_to "Back", "javascript:history.back()", method: :get, class: "btn btn-secondary" %>
+</div>
+
+<h1>Editing profile</h1>
+
+<% if @profile&.photo&.key.present? %>
+  <%= cl_image_tag @profile.photo.key, class: "avatar" %>
+<% else %>
+  <%= image_tag "angry_bird_avatar.png", class: "avatar" %>
+<% end %>
+
+<%= render "form", profile: @profile %>
+
+<br>

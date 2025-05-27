@@ -1,0 +1,12 @@
+<div id="<%= dom_id profile %>">
+   <% if profile&.photo&.key.present? %>
+    <%= cl_image_tag profile.photo.key, class: "avatar" %>
+  <% else %>
+    <%= image_tag "angry_bird_avatar.png", class: "avatar" %>
+  <% end %>
+
+  <p>
+    <strong>Address:</strong>
+    <%= profile.address %>
+  </p>
+</div>

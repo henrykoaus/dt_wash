@@ -1,0 +1,100 @@
+.pokemon-navbar {
+  background: linear-gradient(to right, #0074cc, #ffcc00);
+  padding: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pokemon-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.logo {
+  height: 50px;
+}
+
+.pokemon-toggler {
+  border: none;
+  background-color: white;
+  padding: 8px 10px;
+  border-radius: 50%;
+}
+
+.navbar-nav .nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: white !important;
+  transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffcc00 !important;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.pokemon-dropdown {
+  background-color: #ffcc00;
+  border-radius: 10px;
+  border: 2px solid #000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+
+.pokemon-dropdown .dropdown-item {
+  color: black;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.pokemon-dropdown .dropdown-item:hover {
+  background-color: #0074cc;
+  color: white;
+}
+
+.logout-btn {
+  color: black !important;
+  font-weight: bold;
+}
+
+.btn-login {
+  background-color: #ffcc00;
+  color: #0074cc;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid white;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.logo {
+  border-radius: 50%;
+}
+
+.avatar-position {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

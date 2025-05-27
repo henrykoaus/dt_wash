@@ -1,0 +1,39 @@
+.custom-card-width {
+  max-width: 80%; // Adjust the width as needed
+  margin: 0 auto; // Center the card
+  background-color: #f8f9fa; // Light gray background color
+  border: 1px solid #dee2e6; // Light border color
+  border-radius: 0.25rem; // Rounded corners
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+}
+
+.card-body {
+  padding: 1rem; // Adjust the padding as needed
+}
+
+.card-text {
+  margin-bottom: 0.5rem; // Adjust the margin as needed
+  color: #343a40; // Dark gray text color
+}
+
+.distance {
+  margin-bottom: 0; // Remove bottom margin for alignment
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: #007bff; // Primary button color
+  border-color: #007bff; // Primary button border color
+  color: white; // Button text color
+}

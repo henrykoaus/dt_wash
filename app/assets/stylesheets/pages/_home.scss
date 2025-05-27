@@ -1,0 +1,50 @@
+// Specific CSS for your home-page
+.dtwash {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #ff0000;
+  text-align: center;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0074cc, #ffcc00);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.home-container {
+  padding-top: 2%;
+  padding-bottom: 5%;
+  background: linear-gradient(to right, #0074cc, #ffcc00);
+  min-height: 100vh;
+}
+
+.pokemon-red {
+  background: linear-gradient(to right, #ff0000, #cc0000);
+  border: 4px solid #ffcc00;
+}
+
+.pokemon-blue {
+  background: linear-gradient(to right, #3b4cca, #1e2a78);
+  border: 4px solid #ffcc00;
+}
+
+
+.pokemon-card-hover {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.pokemon-card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 15px rgba(255, 204, 0, 0.6);
+  border-color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+  .btn-column {
+    width: 80% !important;
+  }
+}

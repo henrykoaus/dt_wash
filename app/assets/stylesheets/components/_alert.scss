@@ -1,0 +1,10 @@
+.alert {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+}
+
+[data-controller="auto-dismiss"] {
+  transition: opacity 1s ease-in-out;
+}

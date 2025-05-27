@@ -1,0 +1,26 @@
+<% if current_user.role == "merchant" %>
+  <% if order.nil? %>
+    <%= cl_image_tag current_user.profile.photo.key, height: 50, width: 50, crop: :fill, radius: 'max', gravity: 'face' %>
+    <div class="badge rounded-pill bg-primary fs-6">Your Location</div>
+  <% else %>
+    <%= cl_image_tag order.customer.profile.photo.key, height: 50, width: 50, crop: :fill, radius: 'max', gravity: 'face' %>
+    <div class="badge rounded-pill bg-primary fs-6"><%= order.notes %></div>
+  <% end %>
+<% else %>
+  <% if order.nil? %>
+    <% if order&.merchant&.profile&.photo&.key.present? %>
+      <%= cl_image_tag order.merchant.profile.photo.key, height: 50, width: 50, crop: :fill, radius: 'max', gravity: 'face' %>
+      <div class="badge rounded-pill bg-primary fs-6"><%= order.merchant.profile.address %></div>
+    <% else %>
+      <%= image_tag "default_profile_photo.png", height: 50, width: 50, crop: :fill, radius: 'max', gravity: 'face', class: 'rounded-circle' %>
+      <div class="badge rounded-pill bg-primary fs-6">Laundry Service</div>
+    <% end %>
+  <% else %>
+    <% if current_user&.profile&.photo&.key.present? %>
+      <%= cl_image_tag current_user.profile.photo.key, height: 50, width: 50, crop: :fill, radius: 'max', gravity: 'face' %>
+    <% else %>
+      <div class="badge rounded-pill bg-secondary fs-6">💩</div>
+    <% end %>
+      <div class="badge rounded-pill bg-primary fs-6">Your Location</div>
+  <% end %>
+<% end %>

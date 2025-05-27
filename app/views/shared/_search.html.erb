@@ -1,0 +1,56 @@
+<!--search bar-->
+<div class="row justify-content-center mb-5">
+  <div class="col-12 col-lg-10">
+    <%= form_with url: appliances_path, method: :get, class: "row g-3 align-items-end" do %>
+      <!-- Address Field -->
+      <div class="col-6 col-md">
+        <div class="input-group shadow-sm flex-fill">
+          <span class="input-group-text bg-white border-end-0 rounded-start-4">
+            <i class="fas fa-map-marker-alt text-primary"></i>
+          </span>
+          <%= text_field_tag :address,
+                             params[:address],
+                             class: "form-control border-start-0 rounded-end-4",
+                             placeholder: "📍 Where to look?",
+                             data: { placeholder_opacity: "true" }%>
+        </div>
+      </div>
+      <!-- Min Price -->
+      <div class="col-6 col-md">
+        <div class="input-group shadow-sm flex-fill">
+          <span class="input-group-text bg-white border-end-0 rounded-start-4">
+            <i class="fas fa-coins text-warning"></i>
+          </span>
+          <%= number_field_tag :min_price,
+                               params[:min_price],
+                               class: "form-control border-start-0 rounded-end-4",
+                               placeholder: "Price Range (Min 💰)",
+                               data: { placeholder_opacity: "true" }%>
+        </div>
+      </div>
+
+      <!-- Max Price -->
+      <div class="col-6 col-md">
+        <div class="input-group shadow-sm flex-fill">
+          <span class="input-group-text bg-white border-end-0 rounded-start-4">
+            <i class="fas fa-money-bill-wave text-success"></i>
+          </span>
+          <%= number_field_tag :max_price,
+                               params[:max_price],
+                               class: "form-control border-start-0 rounded-end-4",
+                               placeholder: "Price Range (Max 💵)",
+                               data: { placeholder_opacity: "true" }%>
+        </div>
+      </div>
+
+      <!-- Search Button -->
+      <div class="col-12 col-md-auto d-grid">
+        <%= submit_tag "Search",
+                       name: "",
+                       class: "btn btn-primary rounded-pill fw-bold shadow-sm px-4 py-2 h-100",
+                       style: "background: linear-gradient(135deg, #ff6b6b, #ff8e8e); border: none;",
+                       data: { disable_with: "<i class='fas fa-spinner fa-spin'></i>" } %>
+      </div>
+    <% end %>
+  </div>
+</div>

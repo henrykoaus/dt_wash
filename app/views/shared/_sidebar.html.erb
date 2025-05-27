@@ -1,0 +1,27 @@
+<div class="sidebar-wrapper" data-controller="sidebar">
+  <nav id="sidebar" class="bg-dark text-white" data-sidebar-target="sidebar">
+    <button type="button"
+            class="sidebar-toggle"
+            data-action="click->sidebar#toggle"
+            data-sidebar-target="toggleButton">
+      <i class="fas fa-arrow-right" data-sidebar-target="icon"></i>
+    </button>
+
+    <div class="sidebar-content">
+      <ul class="list-unstyled components">
+        <li class="active">
+          <%= link_to pick_up_orders_orders_path, class: "nav-link text-white", data: { sidebar_target: "link" } do %>
+            <i class="fas fa-box-open me-2"></i>
+            <span class="menu-text">Pick Up Orders</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to accepted_orders_orders_path, class: "nav-link text-white", data: { sidebar_target: "link" } do %>
+            <i class="fas fa-history me-2"></i>
+            <span class="menu-text">Order History</span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,83 @@
+<div class="back-btn">
+  <%= link_to "← Back", "javascript:history.back()", class: "btn btn-secondary show-pokemon-button-back" %>
+</div>
+<div class="home-container">
+  <div class="pb-5">
+    <div data-controller="cloth-upload">
+      <%= simple_form_for @order, multipart: true do |f| %>
+        <%= f.input :total_price, as: :hidden, input_html: { data: { cloth_upload_target: "totalInput" } } %>
+        <h2 class="orders-title">Create New Order</h2>
+        <div class="ordering-container">
+          <div class="create-order-form">
+
+            <div class="mb-4">
+              <%= f.input :address,
+                          wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
+                          input_html: {data: {address_autocomplete_target: "address",}, readonly: true},
+                          class: "d-none"
+              %>
+              <%= f.label :notes, class: 'form-label' %>
+              <%= f.text_field :notes, class: 'form-control', required: true, data: { notes_autocomplete_target: "notes" } %>
+            </div>
+
+            <div>
+              <div class="upload-container mb-4"
+                   data-action="click->cloth-upload#openFileDialog dragover->cloth-upload#highlightDropZone dragleave->cloth-upload#unhighlightDropZone drop->cloth-upload#handleDrop"
+                   data-cloth-upload-target="dropZone">
+                <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
+                <h4>Drag & Drop or Click to Upload</h4>
+                <p class="text-muted">Supported formats: JPG, PNG (Max 5MB each)</p>
+              </div>
+
+              <input type="file"
+                     data-cloth-upload-target="fileInput"
+                     data-action="change->cloth-upload#handleFiles"
+                     multiple
+                     hidden
+                     accept="image/*">
+
+              <div data-cloth-upload-target="formsContainer"></div>
+            </div>
+
+            <div class="mt-4">
+              <h4>Total Price: $<span data-cloth-upload-target="totalPrice">0.00</span></h4>
+            </div>
+            <%= f.submit "Create Order", class: "btn btn-primary btn-lg w-100", data: { action: "cloth-upload#checkBeforeSubmit" } %>
+          </div>
+        </div>
+      <% end %>
+
+      <div data-cloth-upload-target="formTemplate" class="d-none">
+        <div class="cloth-card">
+          <div class="row align-items-center cloth-card-container" id="selected-image-card">
+
+            <!-- Image Preview -->
+            <div class="col-lg-2 col-md-3 col-sm-6 cloth-image-container">
+              <div class="image-preview-container"></div>
+              <input type="file" hidden name="order[clothings_attributes][INDEX][photo]">
+            </div>
+
+            <!-- Cloth Type Selection -->
+            <div class="col-lg-2 col-md-3 col-sm-6 cloth-input-group">
+              <label class="cloth-label">Type</label>
+              <select class="form-control cloth-type-select" required></select>
+            </div>
+
+            <!-- Color Selection -->
+            <div class="col-lg-2 col-md-3 col-sm-6 cloth-input-group">
+              <label class="cloth-label">Color</label>
+              <select class="form-control color-select" required></select>
+            </div>
+
+            <!-- Price Display -->
+            <div class="col-lg-2 col-md-3 col-sm-6 cloth-input-group">
+              <label class="cloth-label">Price ($)</label>
+              <input type="number" class="form-control price-input" readonly>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

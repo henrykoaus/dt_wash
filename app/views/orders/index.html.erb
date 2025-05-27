@@ -1,0 +1,19 @@
+<div class="back-btn">
+  <%= link_to "← Back", home_index_path, class: "btn btn-secondary show-pokemon-button-back" %>
+</div>
+<div class="home-container">
+  <h1 class="orders-title">🎒 My Orders</h1>
+  <% if @orders.present? %>
+    <div id="orders" class="pokemon-orders-container">
+      <% @orders.each do |order| %>
+        <%= render order %>
+      <% end %>
+    </div>
+
+    <div class="pagination-container">
+      <%= paginate @orders %>
+    </div>
+  <% else %>
+    <p class="no-orders">❌ No Orders Yet</p>
+  <% end %>
+</div>

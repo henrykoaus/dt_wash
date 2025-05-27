@@ -1,0 +1,39 @@
+<div class="back-btn">
+  <%= link_to "← Back", home_index_path, class: "btn btn-secondary show-pokemon-button-back" %>
+</div>
+<div class="pokemon-profile-container">
+  <div class="pokemon-trainer-card">
+    <div class="pokemon-card-header">
+      <h2 class="trainer-name"><%= @profile.user.username || "Trainer" %></h2>
+    </div>
+
+    <div class="avatar-container">
+      <% if @profile&.photo&.key.present? %>
+        <%= cl_image_tag @profile.photo.key, class: "avatar pokemon-avatar" %>
+      <% else %>
+        <%= image_tag "default_profile_photo.png", class: "avatar pokemon-avatar" %>
+      <% end %>
+    </div>
+
+    <%= simple_form_for(@profile, html: { class: "pokemon-form" }) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="form-group">
+        <%= f.input :photo, as: :file, label: "Upload Profile Photo", class: "form-control-file pokemon-input" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :address,
+          label: "Address",
+          wrapper_html: { data: { controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] }},
+          input_html: { data: { address_autocomplete_target: "address" }, readonly: true, class: "pokemon-search-bar" }
+        %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "🔄 Update Profile", class: "pokemon-button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+.avatars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  justify-content: center;
+
+  .avatar-option {
+    position: relative;
+    margin: 3px;
+
+    .avatar-radio {
+      display: none;
+
+      &:checked + .avatar-image {
+        border-color: red;
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+      }
+    }
+
+    .avatar-image {
+      border-radius: 50%;
+      border: 2px solid #3b4cca;
+      padding: 5px;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+  }
+}
+
+.avatars label {
+  display: inline-block;
+  margin: 3px;
+}
+
+.avatars img {
+  border-radius: 50%; /* Make the avatars round */
+  border: 2px solid #3b4cca; /* Default border color */
+  padding: 5px; /* Optional: Add some padding inside the border */
+}
+
+.avatars input[type="radio"] {
+  display: none; /* Hide the radio button */
+}
+
+.avatars input[type="radio"]:checked + img {
+  border-color: red; /* Change border color to red when selected */
+}
+
+.pokemon-input::placeholder {
+  opacity: 0.7; /* Adjust the opacity value as needed */
+}

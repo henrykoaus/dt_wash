@@ -1,0 +1,97 @@
+.accepted-orders-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #f8d030, #3b4cca);
+}
+
+.pokemon-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  color: #ff0000;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.pokemon-status-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.pokemon-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 3px solid white;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.pokemon-blue { background: #3b4cca; }
+.pokemon-yellow { background: #ffcc00; }
+.pokemon-gray { background: #808080; }
+.pokemon-red { background: #ff0000; }
+.pokemon-green { background: #28a745; }
+
+.pokemon-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.pokemon-btn.active {
+  border: 4px solid #ffcc00;
+  box-shadow: 0px 0px 10px #ffcc00;
+}
+
+.pokemon-orders-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  width: 100%;
+}
+
+.pokemon-order-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.pokemon-order-card:hover {
+  transform: scale(1.05);
+}
+
+.progress-btn {
+  background: #00aaff;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.progress-btn:hover {
+  background: #0088cc;
+  transform: scale(1.1);
+}

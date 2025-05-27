@@ -1,0 +1,38 @@
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  pointer-events: none;
+  min-width: 200px;
+  transform: translate(5px, 5px);
+  animation: tooltipFadeIn 10s;
+
+  &-content {
+    line-height: 1.4;
+
+    strong {
+      color: #00ff9d;
+      font-weight: 600;
+    }
+  }
+}
+
+@keyframes tooltipFadeIn {
+  0% {
+    opacity: 1;
+    transform: translate(5px, 5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+
+

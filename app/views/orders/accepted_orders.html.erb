@@ -1,0 +1,25 @@
+<div class="back-btn">
+  <%= link_to "← Back", home_index_path, class: "btn btn-secondary show-pokemon-button-back" %>
+</div>
+<div class="home-container">
+  <h1 class="orders-title">Accepted Orders</h1>
+
+  <div class="pokemon-status-buttons">
+    <%= link_to "All", accepted_orders_orders_path, class: "pokemon-btn #{'active' if params[:status].blank?}" %>
+    <%= link_to "Assigned to Merchant", accepted_orders_orders_path(status: "assigned_to_merchant"), class: "pokemon-btn pokemon-blue #{'active' if params[:status] == 'assigned_to_merchant'}" %>
+    <%= link_to "Confirm with Merchant", accepted_orders_orders_path(status: "confirm_with_merchant"), class: "pokemon-btn pokemon-yellow #{'active' if params[:status] == 'confirm_with_merchant'}" %>
+    <%= link_to "Collected to Store", accepted_orders_orders_path(status: "collected_to_store"), class: "pokemon-btn pokemon-gray #{'active' if params[:status] == 'collected_to_store'}" %>
+    <%= link_to "In Process Washing", accepted_orders_orders_path(status: "In_process_washing"), class: "pokemon-btn pokemon-red #{'active' if params[:status] == 'In_process_washing'}" %>
+    <%= link_to "Ready to Pickup", accepted_orders_orders_path(status: "ready_to_pickup"), class: "pokemon-btn pokemon-green #{'active' if params[:status] == 'ready_to_pickup'}" %>
+  </div>
+
+  <div id="orders" class="pokemon-orders-container">
+    <% if @accepted_orders.present? %>
+      <% @accepted_orders.each do |order| %>
+        <%= render order %>
+      <% end %>
+    <% else %>
+      <p class="no-orders">No accepted orders yet.</p>
+    <% end %>
+  </div>
+</div>

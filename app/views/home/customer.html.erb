@@ -1,0 +1,30 @@
+<div class="show-whole-container">
+  <div class="row justify-content-center align-items-center full-height">
+    <div class="col-12 d-flex flex-column align-items-center gap-4">
+      <!-- ⚡ New Order Button -->
+      <div class="btn-column w-50">
+        <%= link_to new_order_path, class: "text-decoration-none" do %>
+          <div class="card pokemon-card-hover shadow-sm p-5 pokemon-red text-white text-center rounded-4">
+            <div class="card-body">
+              <i class="fas fa-plus-circle fa-2x mb-3"></i>
+              <h3 class="card-title mb-2">⚡ New Order</h3>
+              <p class="card-text small">Make your new order</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <!-- 🕒 Order History Button -->
+      <div class="btn-column w-50">
+        <%= link_to orders_path, class: "text-decoration-none" do %>
+          <div class="card pokemon-card-hover shadow-sm p-5 pokemon-blue text-white text-center rounded-4">
+            <div class="card-body">
+              <i class="fas fa-history fa-2x mb-3"></i>
+              <h3 class="card-title mb-2">🕒 My Orders</h3>
+              <p class="card-text small">View the orders that I have made</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

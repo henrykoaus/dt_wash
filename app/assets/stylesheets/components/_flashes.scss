@@ -1,0 +1,51 @@
+.pokemon-alert {
+  position: fixed;
+  top: 35px;  /* Center vertically */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+  z-index: 1050;
+  max-width: 600px; /* Better for responsiveness */
+  width: 90%; /* Works better on mobile */
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(90deg, #ffcc00, #ff0000);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s, fadeOut 0.5s 4s;
+  /* Remove Bootstrap's default fade class conflicts */
+  opacity: 1 !important;
+  display: block !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%); /* Start slightly above center */
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%); /* End at exact center */
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -60%); /* Exit slightly above center */
+  }
+}
+
+/* Override Bootstrap's default close button positioning */
+.pokemon-alert .btn-close {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: invert(1);
+}

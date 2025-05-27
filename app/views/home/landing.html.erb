@@ -1,0 +1,79 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero text-center py-5">
+    <h1 class="display-4 fw-bold landing-title">Gotta Wash 'Em All!</h1>
+    <p class="lead text-secondary pb-5">Fast & Reliable Laundry Delivery</p>
+    <div>
+      <%= link_to "Get Started", new_user_session_path, class: "btn-get-started" %>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features text-center py-5">
+    <h2 class="landing-subtitle mb-5">Why Choose DTWash?</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="<%= asset_path('avatars/pikachu.png') %>" alt="Quick Service" width="80">
+        <h4 class="mt-3 landing-h5">Lightning-Fast Pickup</h4>
+        <p>Just like Pikachu's Thunderbolt, we pick up your laundry in a flash!</p>
+      </div>
+      <div class="col-md-4">
+        <img src="<%= asset_path('avatars/squirtle.png') %>" alt="Eco-Friendly" width="80">
+        <h4 class="mt-3 landing-h5">Eco-Friendly Wash</h4>
+        <p>Squirtle-approved water-saving technology for an eco-friendly clean.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="<%= asset_path('avatars/pidgeotto.png') %>" alt="Fast Delivery" width="80">
+        <h4 class="mt-3 landing-h5">Swift Delivery</h4>
+        <p>Our Pidgeotto couriers ensure your clothes reach you fresh and fast.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works py-5">
+    <h2 class="landing-subtitle text-center mb-5">How It Works</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="step-circle">1</div>
+        <h5 class="pt-2 landing-h5">Place an Order</h5>
+        <p>Select photos of your clothes – just like choosing your Pokémon!</p>
+      </div>
+      <div class="col-md-4">
+        <div class="step-circle">2</div>
+        <h5 class="pt-2 landing-h5">We Wash & Fold</h5>
+        <p>Your clothes get the perfect wash, handled with care.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="step-circle">3</div>
+        <h5 class="pt-2 landing-h5">Delivery to Your Door</h5>
+        <p>Receive your laundry fresh & clean, right at your doorstep!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq py-5">
+    <h2 class="text-primary text-center landing-subtitle">Frequently Asked Questions</h2>
+    <div class="accordion mt-4" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#answer1">
+            Do you use eco-friendly detergents?
+          </button>
+        </h2>
+        <div id="answer1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Yes! Squirtle ensures we use the best eco-friendly washing solutions.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Footer -->
+  <footer class="text-center py-4 landing-footer">
+    <h4 class="landing-footer-title">Get your laundry done the Pokémon way!</h4>
+    <div>
+      <%= link_to "Start Now", new_user_session_path, class: "btn-start-now" %>
+    </div>
+  </footer>
+</div>

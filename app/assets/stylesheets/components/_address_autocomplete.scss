@@ -1,0 +1,44 @@
+.mapboxgl-ctrl-geocoder {
+  width: 100% !important;
+  border-radius: 8px;
+  background: white;
+  box-shadow: none;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.mapboxgl-ctrl-geocoder--suggestion {
+  background: #f8f9fa;
+}
+
+.pokemon-search-bar {
+  width: 100%;
+  padding: 12px;
+  border: 3px solid #ffcc00;
+  border-radius: 25px;
+  font-size: 16px;
+  background-color: white;
+  color: #3b4cca;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.pokemon-search-bar::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+.pokemon-search-glow {
+  border-color: #ff7700;
+  box-shadow: 0px 0px 12px rgba(255, 119, 0, 0.7);
+  transform: scale(1.02);
+  outline: none;
+}
+
+.pokemon-search-bar:focus {
+  border-color: #ff0000;
+  box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5);
+}

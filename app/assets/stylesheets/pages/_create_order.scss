@@ -1,0 +1,179 @@
+.create-order-form {
+  max-width: 800px;
+  min-width: 300px;
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ordering-container {
+  background: linear-gradient(to right, #0074cc, #ffcc00);
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+}
+
+.create-pokemon-container {
+  background: #f3f4f6;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-pokemon-title {
+  font-family: 'Pokemon Solid', sans-serif;
+  color: #ffcc00;
+  text-shadow: 2px 2px 4px #333;
+}
+
+.create-pokemon-input {
+  border: 2px solid #ffcc00;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.create-pokemon-upload-container {
+  border: 3px dashed #ffcc00;
+  border-radius: 12px;
+  text-align: center;
+  padding: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.create-pokemon-upload-container:hover {
+  background: rgba(255, 204, 0, 0.1);
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.5);
+}
+
+.create-pokemon-info-box {
+  background: #0075BE;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.create-pokemon-btn {
+  background: #ffcc00;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.create-pokemon-btn:hover {
+  background: #ff0000;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Cloth Card - Main Card Layout */
+.cloth-card {
+  display: flex;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  border: 3px solid #ffcc00; /* Pokémon Yellow Border */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cloth Card Container - Flexbox for Even Spacing */
+.cloth-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; /* Ensures spacing between items */
+  padding: 10px;
+}
+
+/* Image Preview Container - Centers the Image */
+.cloth-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+  max-width: 120px;
+}
+
+/* Cloth Label - Styled for Clarity */
+.cloth-label {
+  font-weight: bold;
+  color: #0074cc; /* Pokémon Blue */
+  display: block;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Cloth Input Group - Centered Content */
+.cloth-input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1; /* Ensures the input group takes equal space */
+  min-width: 120px;
+  max-width: 150px;
+}
+
+/* Select and Input - Ensure even width */
+.cloth-input-group select,
+.cloth-input-group input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 2px solid #0074cc;
+  text-align: center;
+}
+
+/* Remove Button - Smaller Space */
+.remove-btn {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 5px 10px;
+  font-size: 12px;
+  max-width: 50px; /* Limit the button width */
+  margin-top: 10px;
+}
+
+.remove-btn:hover {
+  background: red;
+  color: white;
+  border-color: yellow;
+  box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cloth-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cloth-input-group {
+    width: 100%;
+    text-align: center;
+  }
+
+  .remove-btn {
+    max-width: none;
+    margin-top: 15px;
+  }
+}

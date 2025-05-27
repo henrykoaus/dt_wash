@@ -1,0 +1,12 @@
+<% if notice %>
+  <div class="pokemon-alert alert-info alert-dismissible fade show m-1" role="alert" data-controller="auto-dismiss">
+<!--    <button type="button" class="btn-close" data-bs-dismiss="pokemon-alert" aria-label="Close"></button>-->
+    <%= notice %>
+  </div>
+<% end %>
+<% if alert %>
+  <div class="pokemon-alert alert-warning alert-dismissible fade show m-1" role="alert" data-controller="auto-dismiss">
+<!--    <button type="button" class="btn-close" data-bs-dismiss="pokemon-alert" aria-label="Close"></button>-->
+    <%= alert %>
+  </div>
+<% end %>

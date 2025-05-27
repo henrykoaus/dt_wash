@@ -1,0 +1,21 @@
+.input-group-text {
+  transition: all 0.3s ease;
+  //border: red 1px solid;
+}
+
+.form-control:focus + .input-group .input-group-text {
+  transform: scale(1.1);
+  color: #ff6b6b !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 14px rgba(222, 184, 47, 1) !important;
+}
+
+/* Target only the placeholder text */
+[data-placeholder-opacity]::placeholder {
+  opacity: 0.3;
+  color: inherit; /* Maintain original color but with opacity */
+}
+

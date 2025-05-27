@@ -1,0 +1,124 @@
+// Import page-specific CSS files here.
+@import "home";
+@import "register";
+@import "accepted_orders";
+@import "order_card";
+@import "create_order";
+@import "order_show";
+@import "show";
+@import "orders_index";
+@import "login";
+@import "signup";
+@import "loading";
+@import "profile";
+@import "landing";
+// app/assets/stylesheets/orders.scss
+
+// General styles
+body {
+  background-color: #f2f2f2;
+  font-family: 'Pokemon', sans-serif;
+}
+
+// Container styles
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+// Header styles
+h2 {
+  color: #ffcb05;
+  text-shadow: 2px 2px #3b4cca;
+}
+
+// Upload container styles
+.upload-container {
+  background-color: #ffcb05;
+  border: 2px dashed #3b4cca;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.upload-container:hover {
+  background-color: #ffdf70;
+}
+
+// Button styles
+.btn-primary {
+  background-color: #3b4cca;
+  border-color: #3b4cca;
+}
+
+.btn-primary:hover {
+  background-color: #2a3a8c;
+  border-color: #2a3a8c;
+}
+
+// Alert styles
+.alert-warning {
+  background-color: #ffcb05;
+  border-color: #3b4cca;
+  color: #3b4cca;
+}
+
+// Form styles
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #3b4cca;
+}
+
+.form-label {
+  color: #3b4cca;
+}
+
+// Cloth card styles
+.cloth-card {
+  background-color: #ffcb05;
+  border: 1px solid #3b4cca;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.cloth-card .row {
+  align-items: center;
+}
+
+.cloth-card .filename {
+  font-weight: bold;
+  color: #3b4cca;
+}
+
+// Remove button styles
+.btn-danger {
+  background-color: #ff0000;
+  border-color: #ff0000;
+}
+
+.btn-danger:hover {
+  background-color: #cc0000;
+  border-color: #cc0000;
+}
+
+// Total price styles
+.total-price {
+  font-size: 1.5em;
+  color: #3b4cca;
+}
+
+.image-preview-container {
+  margin-bottom: 10px;
+}
+
+.img-thumbnail {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

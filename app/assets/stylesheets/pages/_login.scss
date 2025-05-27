@@ -1,0 +1,67 @@
+.pokemon-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #0074cc, #ffcc00);
+  padding-bottom: 100px;
+}
+
+.pokemon-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 500px;
+  min-width: 300px;
+  width: 50%;
+}
+
+.pokemon-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  color: #ff0000;
+  margin-bottom: 1rem;
+}
+
+.pokemon-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #3b4cca;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
+.pokemon-checkbox {
+  margin-top: 10px;
+}
+
+.pokemon-button {
+  background: #ff0000;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.pokemon-button:hover {
+  background: #cc0000;
+  transform: scale(1.05);
+}
+
+.pokemon-links {
+  margin-top: 1rem;
+}

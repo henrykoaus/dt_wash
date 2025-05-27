@@ -1,0 +1,118 @@
+.pokemon-signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+  background: linear-gradient(to right, #0074cc, #ffcc00);
+  padding-bottom: 50px;
+}
+
+.pokemon-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 500px;
+  min-width: 300px;
+  width: 50%;
+}
+
+.pokemon-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  color: #ff0000;
+  margin-bottom: 1rem;
+}
+
+.pokemon-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #3b4cca;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
+.pokemon-radio {
+  margin-bottom: 1rem;
+}
+
+.pokemon-button {
+  background: #ff0000;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  width: 80%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.pokemon-button:hover {
+  background: #cc0000;
+  transform: scale(1.05);
+}
+
+.pokemon-links {
+  margin-top: 1rem;
+}
+
+.pokemon-role {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.pokemon-role-label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #3b4cca;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.pokemon-radio {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.pokemon-radio input[type="radio"] {
+  display: none;
+}
+
+.pokemon-radio label {
+  display: inline-block;
+  background: #ffcc00;
+  color: #3b4cca;
+  font-size: 0.9rem;
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid #3b4cca;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pokemon-radio input[type="radio"]:checked + label {
+  background: #3b4cca;
+  color: white;
+  border-color: #ffcc00;
+  transform: scale(1.05);
+}
+
+.pokemon-radio label:hover {
+  background: #ff7700;
+  color: white;
+  transform: scale(1.03);
+}

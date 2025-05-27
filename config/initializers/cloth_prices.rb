@@ -1,0 +1,1 @@
+CLOTHS_PRICES = JSON.parse(ENV.fetch('CLOTHS_PRICES', '{}')).freeze

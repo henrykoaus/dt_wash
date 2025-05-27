@@ -1,0 +1,91 @@
+<div class="back-btn">
+  <%= link_to "← Back", home_index_path, class: "btn btn-secondary show-pokemon-button-back" %>
+</div>
+<div class="show-whole-container">
+  <div class="show-page-status-badge">
+    <% if @order.status === "created_by_user" %>
+      <div></div>
+    <% else %>
+      <div class="pokemon-status">
+        <% status_colors = {
+          "assigned_to_merchant" => "bg-secondary text-white",
+          "confirm_with_merchant" => "bg-info text-dark",
+          "collected_to_store" => "bg-dark text-white",
+          "In_process_washing" => "bg-danger text-dark",
+          "ready_to_pickup" => "bg-success text-dark"
+        } %>
+      <div class="pokemon-status-badge <%= status_colors[@order.status] %>">
+        ⚡ <strong><%= @order.status.titleize %></strong>
+      </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="show-pokemon-orders-container">
+    <div class="order-card show-pokemon-card">
+      <h2 class="orders-title">Order Details</h2>
+      <div class="pokemon-card-info">
+        <h3>
+          🙋‍♀️ <%= @order.notes %>
+        </h3>
+      </div>
+      <div class="pokemon-card-info">
+        <div>
+          <p class="pokemon-card-text">
+            💰 <strong>Total Price:</strong> $<%= @order.total_price %>
+          </p>
+          <p class="pokemon-card-text">
+            👕 <strong>Number of Clothes:</strong> <%= @order.clothings.size %>
+          </p>
+        </div>
+      </div>
+      <div class="order-images-container show-pokemon-container">
+        <div class="order-images">
+          <% if @order.clothings.any? %>
+            <% @order.clothings.each do |clothing| %>
+              <div class="show-clothing-image"
+                   data-controller="tooltip"
+                   data-tooltip-cloth-type="<%= clothing.cloth_type %>"
+                   data-tooltip-price="<%= clothing.price %>"
+                   data-tooltip-color="<%= clothing.color %>"
+                   data-action="mouseenter->tooltip#mouseenter mouseleave->tooltip#mouseleave">
+                <%= cl_image_tag clothing.photo.key, height: 150, width: 150, crop: :fill %>
+              </div>
+            <% end %>
+          <% else %>
+            <p class="show-no-images show-pokemon-text">No photos available</p>
+          <% end %>
+        </div>
+      </div>
+      <% if current_user.role == "customer" %>
+        <div class="show-customer-controls">
+          <%= link_to "Edit Order", edit_order_path(@order), class: "btn btn-warning show-pokemon-button" %>
+          <%= button_to 'Delete Order', order_path(@order), method: :delete, data: { turbo_confirm: 'Are you sure you want to delete this order?' }, class: 'btn btn-danger show-pokemon-button' %>
+        </div>
+      <% else %>
+        <div></div>
+      <% end %>
+      <% if current_user.role == "merchant" %>
+        <div class="show-merchant-controls">
+          <% if @order.created_by_user? %>
+            <%= button_to "Confirm Order", confirm_order_path(@order), method: :patch, class: "btn btn-primary show-pokemon-button" %>
+          <% else %>
+            <%= button_to "Update Progress", progress_order_path(@order), method: :patch, class: "btn btn-primary show-pokemon-button" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="show-order-map-container show-pokemon-container">
+    <div class="map-wrapper">
+      <div class="show-map-container w-60"
+           style="height: 450px;"
+           data-controller="show-map"
+           data-show-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+           data-show-map-markers-value="<%= @markers.to_json %>"
+           data-show-map-latitude-value="<%= current_user.profile.latitude %>"
+           data-show-map-longitude-value="<%= current_user.profile.longitude %>">
+      </div>
+    </div>
+  </div>
+</div>

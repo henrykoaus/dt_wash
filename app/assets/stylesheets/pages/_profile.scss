@@ -1,0 +1,77 @@
+.pokemon-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #0074cc, #ffcc00);
+}
+
+.pokemon-trainer-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 600px;
+  min-width: 300px;
+  width: 60%;
+  border: 3px solid #ff0000;
+  position: relative;
+}
+
+.pokemon-card-header {
+  background: #ff0000;
+  color: white;
+  padding: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.trainer-name {
+  font-family: 'Press Start 2P', cursive;
+  color: #3b4cca;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.avatar-container {
+  margin-bottom: 1rem;
+}
+
+.pokemon-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #ffcc00;
+  box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.8);
+}
+
+.pokemon-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #3b4cca;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
+.pokemon-button {
+  background: #ff0000;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.pokemon-button:hover {
+  background: #cc0000;
+  transform: scale(1.05);
+}

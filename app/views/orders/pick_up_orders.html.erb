@@ -1,0 +1,29 @@
+<div class="back-btn">
+  <%= link_to "← Back", home_index_path, class: "btn btn-secondary show-pokemon-button-back" %>
+</div>
+<div class="home-container">
+  <h1 class="orders-title">Pick Up Orders</h1>
+
+  <% if @pick_up_orders.present? %>
+    <div class="d-flex justify-content-between" id="pickup-layout">
+      <div id="orders" class="pokemon-orders-container">
+        <% @pick_up_orders.each do |order| %>
+          <%= render order %>
+        <% end %>
+      </div>
+      <div class="index-map-wrapper" style="height: 500px;"
+       data-controller="index-map"
+       data-index-map-latitude-value="<%= current_user.profile.latitude %>"
+       data-index-map-longitude-value="<%= current_user.profile.longitude %>"
+       data-index-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+       data-index-map-markers-value="<%= @markers.to_json %>">
+      </div>
+    </div>
+
+    <div class="pagination-container">
+      <%= paginate @pick_up_orders, window: 2, left: 1, right: 1 %>
+    </div>
+  <% else %>
+    <p class="no-orders">No orders available for pickup yet</p>
+  <% end %>
+</div>

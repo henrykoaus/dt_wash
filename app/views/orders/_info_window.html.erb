@@ -1,0 +1,17 @@
+<% if current_user.role == "merchant" %>
+  <% if order.nil? %>
+    <h2>Your Location</h2>
+    <p><%= current_user.profile.address %></p>
+  <% else %>
+    <h2><%= order.notes %></h2>
+    <p><%= order.address if order.present? %></p>
+  <% end %>
+<% else %>
+  <% if order.nil? %>
+    <h2>Laundry Service</h2>
+    <p><%= order.merchant.profile.address if order&.merchant&.profile&.address.present? %></p>
+  <% else %>
+    <h2>Your Location</h2>
+    <p><%= order.address if order.present? %></p>
+  <% end %>
+<% end %>

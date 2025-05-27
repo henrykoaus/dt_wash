@@ -1,0 +1,49 @@
+<div id="<%= dom_id order %>" class="pokemon-order-card" data-order-id="<%= order.id %>" data-order-address="<%= order.address %>">
+  <div class="pokemon-card-body">
+    <div class="pokemon-card-info">
+      <h3 class="mt-2">
+        🙋‍♀️ <%= order.notes %>
+      </h3>
+      <% if order.status === "created_by_user" %>
+        <div></div>
+      <% else %>
+      <div class="pokemon-status">
+          <% status_colors = {
+            "assigned_to_merchant" => "bg-secondary text-white",
+            "confirm_with_merchant" => "bg-info text-dark",
+            "collected_to_store" => "bg-dark text-white",
+            "In_process_washing" => "bg-danger text-dark",
+            "ready_to_pickup" => "bg-success text-dark"
+          } %>
+        <div class="pokemon-status-badge <%= status_colors[order.status] %>">
+          ⚡ <strong><%= order.status.titleize %></strong>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="pokemon-card-info">
+      <div>
+        <p class="pokemon-card-text">
+          📍 <strong></strong> <%= order.address %>
+        </p>
+        <p class="pokemon-card-text">
+          👕 <strong>Number of Clothes:</strong> <%= order.clothings.size %>
+        </p>
+        <p class="pokemon-card-text">
+          💰 <strong>Total Price:</strong> $<%= order.total_price %>
+        </p>
+        <% unless order.distance.nil? %>
+          <p class="pokemon-card-text distance">
+            🏁 <strong>Distance:</strong> <%= order.distance.to_f.round(2) %> km
+          </p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-6 text-end">
+      <a href="<%= order_path(order) %>" class="progress-btn">
+        🔍 See Details
+      </a>
+    </div>
+  </div>
+</div>

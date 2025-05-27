@@ -1,0 +1,54 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+@import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
+
+h3 {
+  color: #007bff;
+}
+
+.create-offer-btn {
+  position: fixed;
+  bottom: 20px; /* Position it 20px above the bottom of the page */
+  right: 20px;  /* Position it 20px from the right side */
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px; /* Optional: makes it a round button */
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.create-offer-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.main-content {
+  margin-top: 30px; /* Adjust the value as needed */
+}
+
+.no-sidebar-content {
+  margin-top: 30px; /* Adjust the value as needed */
+  margin-left: 0; /* Ensure no left margin when sidebar is not present */
+}
+
+//hide on mobile devices
+@media (max-width: 767px) {
+  .back-btn,
+  .dtwash {
+    display: none;
+  }
+}

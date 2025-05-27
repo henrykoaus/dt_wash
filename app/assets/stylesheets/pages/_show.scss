@@ -1,0 +1,100 @@
+.back-btn {
+  position: absolute;
+  top: 100px;
+  left: 10px;
+}
+
+.order-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-title {
+  color: #ffcc00;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.merchant-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+
+.merchant-controls .btn {
+  background-color: rgb(7, 210, 7);
+  color: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: bold;
+}
+
+.order-images-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 235, 59, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-images {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.clothing-image img {
+  border-radius: 10px;
+  border: 2px solid #007bff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.clothing-image img:hover {
+  transform: scale(1.1);
+}
+
+.no-images {
+  text-align: center;
+  font-style: italic;
+  color: #6c757d;
+}
+
+.order-map-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.order-map {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  border: 2px solid #007bff;
+}
+
+.pokemon-button-back {
+  background: #ffcc00;
+  color: #3b4cca;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 5px 12px;
+  text-transform: uppercase;
+}
+
+.pokemon-button-back:hover {
+  background: #ffdb4d;
+}

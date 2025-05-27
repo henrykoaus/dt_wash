@@ -1,0 +1,121 @@
+<div class="home-container">
+  <div class="pb-5">
+    <div data-controller="cloth-upload">
+      <%= simple_form_for @order, multipart: true do |f| %>
+        <%= f.input :total_price, as: :hidden, input_html: { data: { cloth_upload_target: "totalInput" } } %>
+          <h2 class="orders-title">Edit Order</h2>
+          <div class="ordering-container">
+            <div class="create-order-form">
+              <!-- Order Fields -->
+              <div class="mb-4">
+                <%= f.input :address,
+                            wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
+                            input_html: {data: {address_autocomplete_target: "address",}, readonly: true},
+                            class: "d-none"
+                %>
+                <%= f.label :notes, class: 'form-label' %>
+                <%= f.text_field :notes, class: 'form-control', required: true %>
+              </div>
+
+              <!-- Clothes Upload Section -->
+              <div>
+                <div class="upload-container mb-4"
+                     data-action="click->cloth-upload#openFileDialog dragover->cloth-upload#highlightDropZone dragleave->cloth-upload#unhighlightDropZone drop->cloth-upload#handleDrop"
+                     data-cloth-upload-target="dropZone">
+                  <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
+                  <h4>Drag & Drop or Click to Upload</h4>
+                  <p class="text-muted">Supported formats: JPG, PNG (Max 5MB each)</p>
+                </div>
+
+                <input type="file"
+                       data-cloth-upload-target="fileInput"
+                       data-action="change->cloth-upload#handleFiles"
+                       multiple
+                       hidden
+                       accept="image/*">
+
+                <!-- Dynamic Cloth Forms Container -->
+                <div data-cloth-upload-target="formsContainer">
+                  <% @order.clothings.each do |clothing| %>
+                    <div class="cloth-card" data-clothing-id="<%= clothing.id %>">
+                      <div class="row align-items-center cloth-card-container" id="selected-image-card">
+
+                        <!-- Image Preview -->
+                        <div class="col-lg-2 col-md-3 col-sm-6 cloth-image-container">
+                          <div class="image-preview-container">
+                            <img src="<%= url_for(clothing.photo) %>" class="img-thumbnail" style="max-width: 100px; max-height: 100px;">
+                          </div>
+                          <input type="file" hidden name="order[clothings_attributes][<%= clothing.id %>][photo]">
+                          <input type="hidden" name="order[clothings_attributes][<%= clothing.id %>][id]" value="<%= clothing.id %>">
+                        </div>
+
+                        <!-- Cloth Type Selection -->
+                        <div class="col-lg-2 col-md-3 col-sm-6 cloth-input-group">
+                          <label class="cloth-label">Type</label>
+                          <select class="form-control cloth-type-select" name="order[clothings_attributes][<%= clothing.id %>][cloth_type]" required>
+                            <option value="<%= clothing.cloth_type %>"><%= clothing.cloth_type %></option>
+                            <!-- Add other options here if needed -->
+                          </select>
+                        </div>
+
+                        <!-- Color Selection -->
+                        <div class="col-lg-2 col-md-3 col-sm-6 cloth-input-group">
+                          <label class="cloth-label">Color</label>
+                          <select class="form-control color-select" name="order[clothings_attributes][<%= clothing.id %>][color]" required>
+                            <option value="<%= clothing.color %>"><%= clothing.color %></option>
+                            <!-- Add other options here if needed -->
+                          </select>
+                        </div>
+
+                        <!-- Price Display -->
+                        <div class="col-lg-2 col-md-3 col-sm-6 cloth-input-group">
+                          <label class="cloth-label">Price ($)</label>
+                          <input type="number" class="form-control price-input" name="order[clothings_attributes][<%= clothing.id %>][price]" value="<%= clothing.price %>" readonly>
+                        </div>
+
+                        <!-- Remove Button -->
+                        <div class="col-lg-1 col-md-2 col-sm-2 text-center">
+                          <button type="button" class="btn remove-btn" data-action="click->cloth-upload#removeClothing" data-clothing-id="<%= clothing.id %>">🗑️</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <h4>Total Price: $<span data-cloth-upload-target="totalPrice"><%= @order.total_price %></span></h4>
+              </div>
+              <div class="d-none" data-cloth-upload-target="alertContainer">
+                <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
+                  <span class="d-none" data-cloth-upload-target="alertText"></span>
+                </div>
+              </div>
+
+        <%= f.submit "Update Order", class: "btn btn-primary btn-lg w-100", data: { action: "cloth-upload#checkBeforeSubmit" } %>
+        </div>
+        <% end %>
+
+        <!-- Template for New Cloth Item Form (Hidden) -->
+        <div data-cloth-upload-target="formTemplate" class="d-none">
+          <div class="cloth-card">
+            <div class="row align-items-center cloth-card-container" id="selected-image-card">
+              <div class="col-lg-2 col-md-3 col-sm-6 cloth-image-container">
+                <div class="image-preview-container"></div>
+                <input type="file" hidden name="order[clothings_attributes][INDEX][photo]">
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 cloth-input-group">
+                <select class="form-control cloth-type-select" required></select>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 cloth-input-group">
+                <select class="form-control color-select" required></select>
+              </div>
+              <div class="col-lg-2 col-md-3 col-sm-6 cloth-input-group"><input type="number" class="form-control price-input" readonly></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

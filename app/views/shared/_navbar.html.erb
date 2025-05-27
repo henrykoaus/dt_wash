@@ -1,0 +1,50 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon pokemon-navbar">
+  <div class="container-fluid position-relative">
+    <%= link_to home_index_path, class: "navbar-brand" do %>
+      <%= image_tag "DTWash.png", class: "logo" %>
+    <% end %>
+
+    <h3 class="position-absolute start-50 translate-middle-x dtwash">
+      <strong>DTWash</strong> - <small>Quick Laundry Delivery Service For you</small>
+    </h3>
+
+    <%# Reshape the avatary on mobile screen size %>
+    <button class="navbar-toggler pokemon-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="avatar-position">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <% if user_signed_in? %>
+            <li class="nav-item active">
+              <span class="nav-link user-role"
+                    data-controller="greeting"
+                    data-greeting-target="greeting"
+                    data-greeting-username-value="<%= current_user.role %>"
+                    ></span>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <% if current_user&.profile&.photo&.key.present? %>
+                  <%= cl_image_tag current_user.profile.photo.key, class: "avatar", alt: "dropdown menu" %>
+                <% else %>
+                  <%= image_tag "pikachu_avatar.png", class: "avatar", alt: "dropdown menu" %>
+                <% end %>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end pokemon-dropdown" aria-labelledby="navbarDropdown">
+                <%= link_to 'Profile', profile_path(current_user.profile), class: 'dropdown-item' %>
+                <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item logout-btn" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "btn btn-login" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

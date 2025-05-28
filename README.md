@@ -1,24 +1,46 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+DTWash (DoorToWash) - Ruby on Rails project with Ruby, Javascript, HTML, SCSS, PostgreSQL and others
 
-Things you may want to cover:
+DoorToWash is a convenient laundry delivery service like laundry version of Uber/AirBnb thus it has customer side and service provider side, 
+using Google Cloud Vision AI for photo recognition to tell about the clothes for the laundry including types and colours of the clothes. 
 
-* Ruby version
 
-* System dependencies
+1. Tech Stack Overview
+🚀 Core Framework
+● Ruby 3.3.5 | Rails 7.1.5
+● Puma (Web Server) | PostgreSQL (Database)
+● Hotwire (Turbo + Stimulus) for dynamic frontend
 
-* Configuration
+2. Frontend & Styling
+🎨 UI/UX Tools
+● Bootstrap 5 + Icons | Font Awesome
+● Flatpickr (Date Picker) | Mapbox GL (Interactive Maps)
+● jQuery (Legacy Support) | Stimulus.js (Reactive Components)
 
-* Database creation
+3. Data & Security
+🔐 Authentication & Search
+● Devise (User Auth) | Pundit (Role-Based Access)
+● pg_search (PostgreSQL Full-Text Search)
 
-* Database initialization
+4. APIs & External Services
+🌐 Integrations
+● Geocoder (Address ↔ Coordinates)
+● Cloudinary (Image Management)
+● HTTParty (Call Google Cloud Version API)
 
-* How to run the test suite
+5. Productivity & Testing
+⚙️Tools & Workflow
+● Kaminari (Pagination) | Faker (Test Data)
+● Capybara + Selenium (System Testing)
+● Dotenv (Env Variables) | Debug (Troubleshooting)
 
-* Services (job queues, cache servers, search engines, etc.)
+6. Modern JavaScript
+📦 Importmap Packages
+● mapbox-gl (Maps) | Lodash.debounce (Performance)
+● Nanoid (Unique IDs) | Fuzzy (Search Matching)
 
-* Deployment instructions
-
-* ...
+7. Why It Matters
+✅ Key Strengths
+● Scalable: PostgreSQL + Hotwire
+● Modern: Rails 7 + Importmap

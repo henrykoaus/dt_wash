@@ -409,7 +409,7 @@ DEPENDENCIES
   ostruct
   pg (~> 1.1)
   pg_search
-  puma (>= 5.0)
+  puma
   pundit
   rails (~> 7.1.5, >= 7.1.5.1)
   rails_12factor

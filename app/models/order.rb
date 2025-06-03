@@ -5,7 +5,6 @@ class Order < ApplicationRecord
   belongs_to :merchant, class_name: 'User', optional: true
   has_many :clothings, dependent: :destroy
   accepts_nested_attributes_for :clothings, allow_destroy: true
-
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 

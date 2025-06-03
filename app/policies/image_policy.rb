@@ -4,6 +4,5 @@ class ImagePolicy < ApplicationPolicy
       # Example: Only allow access to images owned by the current user
     end
   end
-
   # ...
 end

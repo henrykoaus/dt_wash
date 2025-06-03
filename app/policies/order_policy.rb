@@ -10,6 +10,7 @@ class OrderPolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
+
     def resolve
       if user.customer?
         scope.where(customer_id: user.id)

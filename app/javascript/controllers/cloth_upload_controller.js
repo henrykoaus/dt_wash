@@ -43,10 +43,8 @@ export default class extends Controller {
         for (const file of Array.from(files)) {
             try {
                 if (!this.validateFile(file)) continue;
-
                 const formData = new FormData();
                 formData.append('image', file);
-
                 const response = await fetch('/analyze_image', {
                     method: 'POST',
                     body: formData,
@@ -67,7 +65,6 @@ export default class extends Controller {
                 this.handleProcessingError(file, error);
             }
         }
-
         loadingOverlay.classList.add('d-none'); // Hide loading overlay
     }
 
@@ -90,7 +87,6 @@ export default class extends Controller {
             alert(`Skipped ${file.name}: File too large (max 5MB)`)
             return false
         }
-
         return true
     }
 
@@ -183,8 +179,6 @@ export default class extends Controller {
             priceInput.value = this.clothingPrices[selectedType] || 0
             this.updateTotalPrice()
         })
-
-
 
         // Configure file input
         const dataTransfer = new DataTransfer();

@@ -6,7 +6,6 @@ class ProfilePolicy < ApplicationPolicy
   # https://gist.github.com/Burgestrand/4b4bc22f31c8a95c425fc0e30d7ef1f5
 
   class Scope < ApplicationPolicy::Scope
-    # NOTE: Be explicit about which records you allow access to!
     def resolve
       # Make sure to return the profiles that the user has access to.
       scope.all # Admins can see all profiles

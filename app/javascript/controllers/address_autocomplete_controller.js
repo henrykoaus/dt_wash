@@ -16,7 +16,6 @@ export default class extends Controller {
     })
 
     this.geocoder.addTo(this.element)
-
     this.geocoder._inputEl.classList.add(
       "form-control",
       "pokemon-search-bar",

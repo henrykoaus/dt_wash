@@ -7,7 +7,6 @@ export default class extends Controller {
         const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true' || localStorage.getItem('sidebarCollapsed') === null
         this.toggleClass(isCollapsed)
         this.updateIcon(isCollapsed)
-
         this.linkTargets.forEach(link => {
             link.addEventListener('click', () => this.collapseSidebar())
         })

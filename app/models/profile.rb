@@ -1,10 +1,8 @@
 class Profile < ApplicationRecord
   belongs_to :user
   has_one_attached :photo
-
   geocoded_by :address
   after_validation :geocode
-
   after_create :attach_default_profile_photo
 
   private

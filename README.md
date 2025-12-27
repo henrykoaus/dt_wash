@@ -1,6 +1,6 @@
 # README
 
-DTWash (DoorToWash) - Ruby on Rails project with Ruby, Javascript, HTML, SCSS, PostgreSQL and others
+DTWash (DoorToWash) - Ruby on Rails project with Ruby, Javascript, HTML, SCSS, PostgreSQL and API intergration with AI features in like automatic image reader
 
 DoorToWash is a convenient laundry delivery service like laundry version of Uber/AirBnb thus it has customer side and service provider side, 
 using Google Cloud Vision AI for photo recognition to tell about the clothes for the laundry including types and colours of the clothes. 
